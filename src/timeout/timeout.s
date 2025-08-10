@@ -1,8 +1,6 @@
+.equ NUM_ACCOUNTS, 0x0000
+.equ MAX_SLOT_HEIGHT, 0x0010
+.equ CURRENT_SLOT_HEIGHT, -0x0028
 .globl entrypoint
 entrypoint:
-  lddw r1, message
-  lddw r2, 14
-  call sol_log_
-  exit
-.rodata
-  message: .ascii "Hello, Solana!"
+
