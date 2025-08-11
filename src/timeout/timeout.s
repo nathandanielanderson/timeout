@@ -6,8 +6,10 @@
 entrypoint:
   ldxdw r2, [r1+MAX_SLOT_HEIGHT]
   ldxdw r3, [r1+CLOCK_DATA]
-  jle r3, r2, end
+  jgt r3, r2, set_err
+  exit
+
+set_err:
   lddw r0, 1
-end:
   exit
 
